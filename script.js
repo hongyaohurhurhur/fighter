@@ -31,11 +31,11 @@ function candyCrushGame() {
     // ];
     const candyColors = [
         "url('images/trump.png')",
-        "url'images/miku.png')",
-        "url'images/nicki.png')",
-        "url'images/sailormoon.png')",
-        "url'images/shizuka.png')",
-        "url'images/uncle.png')",
+        "url('images/miku.png')",
+        "url('images/nicki.png')",
+        "url('images/sailormoon.png')",
+        "url('images/shizuka.png')",
+        "url('images/uncle.png')",
     ];
 
     // Create the Game Board
