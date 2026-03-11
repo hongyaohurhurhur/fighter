@@ -20,7 +20,7 @@
     var gameOver = false;
     var count = 30;
     var counter = setInterval(timer, 1000);
-    setTimeout("pop()", 3000);
+    var popTimer = setTimeout("pop()", 3000);
 
     let images = [
         "punchimages/miku.png",
@@ -35,14 +35,14 @@
     ];
 
     function pop() {
-    var x = Math.random() * 500;
-    var y = Math.random() * 150;
-    $(".mole").css("opacity", 1);
-    $(".mole").css({
-        top: y,
-        left: x
-    });
-    setTimeout("pop()", Math.random() * 3000);
+        var x = Math.random() * 500;
+        var y = Math.random() * 150;
+        $(".mole").css("opacity", 1);
+        $(".mole").css({
+            top: y,
+            left: x
+        });
+        popTimer = setTimeout("pop()", Math.random() * 3000);
     }
 
     let index = 0;
@@ -55,6 +55,7 @@
     index++;
     if (index == images.length) {
             gameOver = true;
+            clearTimeout(popTimer);
             $("#timer").html("不要再打了");
         }
 
@@ -70,6 +71,7 @@
     function timer() {
     if (count <= 0) {
         gameOver = true;
+        clearTimeout(popTimer);
         $("#timer").html("Game&nbsp;Over");
         return;
     }
