@@ -59,6 +59,7 @@
         if (index >= images.length) {
             gameOver = true;
             clearTimeout(popTimer);
+            clearTimeout(counter);
             $("#timer").html("不要再打了");
         }
         index++;
