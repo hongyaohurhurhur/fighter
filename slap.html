@@ -4,9 +4,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="slap.css">
     <title>Smack that</title>
-    <audio id="bgm" autoplay loop hidden>
-        <source src="sounds/smackthat.mp3" type="audio/mpeg">
-    </audio>
 </head>
 
 <body>
@@ -18,6 +15,9 @@
 
 <div id="sound"></div>
 <button>Restart</button>
+<!-- <audio id="bgm" autoplay loop hidden>
+    <source src="sounds/smackthat.mp3" type="audio/mpeg">
+</audio> -->
 
 <script>
     var hits = 0;
@@ -51,7 +51,6 @@
 
     let index = 0;
     $('.mole').click(function() {
-        $("#bgm")[0].play();
         if (gameOver) return;
         $('#sound').html("<audio autoplay><source src='sounds/punch.wav' type='audio/mpeg'>");
         $(".mole").css("opacity", 0);
