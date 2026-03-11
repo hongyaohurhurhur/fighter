@@ -4,7 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="slap.css">
     <title>Smack that</title>
-    <audio controls autoplay loop>
+    <audio id="bgm" autoplay loop hidden>
         <source src="sounds/smackthat.mp3" type="audio/mpeg">
     </audio>
 </head>
@@ -51,19 +51,20 @@
 
     let index = 0;
     $('.mole').click(function() {
-    if (gameOver) return;
-    $('#sound').html("<audio autoplay><source src='sounds/punch.wav' type='audio/mpeg'>");
-    $(".mole").css("opacity", 0);
-    $("#score").html(++hits);
-    $(this).css("background-image", "url('" + images[index] + "')");
-    if (index == images.length) {
+        $("#bgm")[0].play();
+        if (gameOver) return;
+        $('#sound').html("<audio autoplay><source src='sounds/punch.wav' type='audio/mpeg'>");
+        $(".mole").css("opacity", 0);
+        $("#score").html(++hits);
+        $(this).css("background-image", "url('" + images[index] + "')");
+        if (index >= images.length) {
             gameOver = true;
             clearTimeout(popTimer);
             $("#timer").html("不要再打了");
         }
-
+        index++;
     });
-    index++;
+        
 
     $('button').click(function() {
     count = 30;
