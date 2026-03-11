@@ -3,6 +3,10 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="slap.css">
+    <title>Smack that</title>
+    <audio controls autoplay loop>
+        <source src="sounds/smackthat.mp3" type="audio/mpeg">
+    </audio>
 </head>
 
 <body>
@@ -52,7 +56,6 @@
     $(".mole").css("opacity", 0);
     $("#score").html(++hits);
     $(this).css("background-image", "url('" + images[index] + "')");
-    index++;
     if (index == images.length) {
             gameOver = true;
             clearTimeout(popTimer);
@@ -60,6 +63,7 @@
         }
 
     });
+    index++;
 
     $('button').click(function() {
     count = 30;
